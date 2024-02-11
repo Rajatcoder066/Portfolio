@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+  margin:0;
+  padding:0;
+  background-color: black;
+}
+nav{
+  background-color:rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 78px;
+  font-size: larger;
+
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+
+}
+nav ul li{
+  list-style: none;
+  margin: 0 23px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+nav ul li a:hover{
+  color:#8e4585;
+}
+
+.container{
+  background-color: #000000; 
+  color: white;
+}
+
+.infoContainer{
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-around;
+}
+.Mypic img{
+  
+  height: 100vh;
+}
+.devInfo{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  font-family: "Roboto", sans-serif;
+  color: aliceblue;
+  margin-top: 300px;
+}
+.hello{
+font-size: 40px;
+font-weight: bold;
+}
+.name{
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+
+}
+.about{
+  font-size: 20px;
+  font-family: "Fira Sans", sans-serif;
+
+}
+.main{
+  margin: 0px;
+}
+.left{
+  color: white;
+}
+.logo img{
+  margin-top: 5px;
+  height: 120px;
+  width: 165px;
+}
+
+
+/* CSS */
+.button-4 {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: rgb(129 85 254);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+  margin :10px;
+}
+
+.button-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
+}
+.btn{
+  margin-top: 0px;
+  color: #EDEFF2;
+  display: flex;
+ 
+  flex-direction: row;
+  align-items: left;
+  font-family: "Roboto", sans-serif;
+  color: aliceblue;
+
+
+}
+#quicklink{
+  color:white;
+  color:rgb(145, 105, 254);
+  font-size:20px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.btn1{
+  margin-top: 15px;
+
+  margin-left :218px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-whatsapp{
+  background-color: #075E54;
+  color: white;
+}
+.fa-github{
+  background-color: #2b3137	;
+  color: white;
+}

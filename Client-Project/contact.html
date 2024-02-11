@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    body {
+        background-color: #000000;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px rgba(255,255,255,0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #666666;
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .form-group textarea {
+        height: 150px;
+    }
+    .form-group button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+
+        <img src="img/logo3.png" alt="#">
+      </div>
+      <div class="right"></div>
+      <ul>
+       <li><a href="index.html"> Home</a></li>
+       <li><a href="about.html"> About</a></li>
+       <li><a href="work.html"> Work</a></li>
+       <li><a href="tech.html"> Tech Stack</a></li>
+       <li><a href="contact.html"> Contact</a></li>
+      </ul>
+
+    </nav>
+</header>
+<div class="container">
+    <h2>Contact Us</h2>
+    <form action="#" method="post" id="myform">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBCvg1QioLKt--CWnI9RLmlZdQagXlueCU",
+      authDomain: "datta-5c3e8.firebaseapp.com",
+      projectId: "datta-5c3e8",
+      storageBucket: "datta-5c3e8.appspot.com",
+      messagingSenderId: "782113601150",
+      appId: "1:782113601150:web:d3d7613689a9d1f9020a2f"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+ 
+
+    const db = app.firestore();
+   // firebase.initializeApp(firebaseConfig);
+
+    const form = document.getElementById('myForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      // Get form data
+      const formData = new FormData(form);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message= formData.get('message');
+
+
+      // Store data in Firestore
+      db.collection('users').add({
+        name: name,
+        email: email,
+        message:message
+      })
+      .then(() => {
+        console.log('Data successfully stored in Firestore');
+        alert("login successfully")
+        // You can redirect to another page or show a success message here
+      })
+      .catch((error) => {
+        console.error('Error storing data: ', error);
+        // Handle errors here
+      });
+    });
+  </script>
+</html>
